@@ -1,0 +1,18 @@
+Apr 14, 2026 10:06:02 AM hudson.slaves.ChannelPinger$1 onDead
+INFO: Ping failed. Terminating the channel channel.
+java.util.concurrent.TimeoutException: Ping started at 1776160802851 hasn't completed by 1776161102110
+	at hudson.remoting.PingThread.ping(PingThread.java:135)
+	at hudson.remoting.PingThread.run(PingThread.java:87)
+
+Apr 14, 2026 10:06:03 AM hudson.remoting.Request$2 run
+INFO: Failed to send back a reply to the request UserRequest:hudson.remoting.PingThread$Ping@101205fd: hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@12843fce:channel": channel is already closed
+Apr 14, 2026 10:06:04 AM hudson.remoting.SynchronousCommandTransport$ReaderThread run
+INFO: I/O error in channel channel
+java.io.IOException: Unexpected EOF
+	at hudson.remoting.ChunkedInputStream.readUntilBreak(ChunkedInputStream.java:111)
+	at hudson.remoting.ChunkedCommandTransport.readBlock(ChunkedCommandTransport.java:40)
+	at hudson.remoting.AbstractSynchronousByteArrayCommandTransport.read(AbstractSynchronousByteArrayCommandTransport.java:34)
+	at hudson.remoting.SynchronousCommandTransport$ReaderThread.run(SynchronousCommandTransport.java:62)
+
+Apr 14, 2026 10:06:04 AM hudson.remoting.Request$2 run
+INFO: Failed to send back a reply to the request UserRequest:jenkins.util.SystemProperties$AgentCopier$CopySystemProperties@2b320da8: hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@12843fce:channel": channel is already closed
