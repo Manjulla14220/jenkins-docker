@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+    git 'Default'
+}
     
     environment {
         // Replace with your actual Docker Hub username
