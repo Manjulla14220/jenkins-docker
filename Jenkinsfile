@@ -5,10 +5,7 @@ pipeline {
         DOCKERHUB_USER = 'manju301'
         APP_NAME = 'my-web-app'
     }
-     tools {
-                git 'Default'
-            }
-
+     
     stages {
 
         stage('Clone Code') {
