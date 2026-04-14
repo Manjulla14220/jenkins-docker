@@ -27,6 +27,8 @@ pipeline {
                     sh "docker push ${DOCKERHUB_USER}/${APP_NAME}:${BUILD_NUMBER}"
                 }
             }
+
+        }
       stage('Deploy to Host') {
           steps {
               sh '''
@@ -41,4 +43,4 @@ pipeline {
 
 
     }
-}
+
