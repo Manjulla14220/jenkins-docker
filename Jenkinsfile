@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    tools {
-    git 'Default'
-}
-    
     environment {
         // Replace with your actual Docker Hub username
         DOCKERHUB_USER = 'manju301'
@@ -11,6 +7,15 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            agent { label 'linux-agent' }
+            tools {
+                git 'Default'
+            }
+            steps {
+                checkout scm
+            }
+        }
         stage('Clone Code') {
             steps {
                 git credentialsId: 'git-hub', url: 'https://github.com/Manjulla14220/jenkins-docker'
