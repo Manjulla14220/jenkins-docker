@@ -29,10 +29,6 @@ pipeline {
             }
         }
 
-        stage('Cleanup') {
-            steps {
-                sh "docker rmi ${DOCKERHUB_USER}/${APP_NAME}:${BUILD_NUMBER}"
-            }
-        }
+
     }
 }
