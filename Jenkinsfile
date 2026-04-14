@@ -34,7 +34,7 @@ pipeline {
               sh '''
                   docker pull $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
                   docker create --name temp_container123 $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
-                  sudo docker cp temp_container123:/usr/share/nginx/html/index.html /var/www/html/
+                  docker cp temp_container123:/usr/share/nginx/html/index.html /var/www/html/
                   docker rm temp_container123
                  '''
     }
