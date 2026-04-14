@@ -35,7 +35,7 @@ pipeline {
                   mkdir -p /var/www/html/
                   docker pull $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
                   docker create --name temp_container8 $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
-                  docker cp temp_container8:/usr/share/nginx/html/index.html /var/www/html
+                  docker cp temp_container8:/usr/share/nginx/html/index.html /var/www/html/index.html
                   docker rm temp_container8
                   chmod 644 /var/www/html/index.html
                   
