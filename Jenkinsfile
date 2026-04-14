@@ -27,14 +27,14 @@ pipeline {
                     sh "docker push ${DOCKERHUB_USER}/${APP_NAME}:${BUILD_NUMBER}"
                 }
             }
-            stage('Deploy to Host') {
-    steps {
-        sh '''
-            docker pull $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
-            docker create --name temp_container $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
-            sudo docker cp temp_container:/usr/share/nginx/html/index.html /var/www/html/
-            docker rm temp_container
-        '''
+      stage('Deploy to Host') {
+          steps {
+              sh '''
+                  docker pull $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
+                  docker create --name temp_container $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
+                  sudo docker cp temp_container:/usr/share/nginx/html/index.html /var/www/html/
+                  docker rm temp_container
+                 '''
     }
 }
         }
