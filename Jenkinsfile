@@ -3,7 +3,7 @@ pipeline {
     environment {
         // Replace with your actual Docker Hub username
         DOCKERHUB_USER = 'manju301'
-        APP_NAME = 'my-web-application789'
+        APP_NAME = 'my-web-application111'
     }
      
     stages {
@@ -32,12 +32,12 @@ pipeline {
       stage('Deploy to Host') {
           steps {
               sh '''
-                  mkdir -p /var/www/html/
+               
                   docker pull $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
-                  docker create --name temp_container89 $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
-                  docker cp temp_container89:/usr/share/nginx/html/index.html /var/www/html/index.html
-                  docker rm temp_container89
-                  chmod 644 /var/www/html/index.html
+                  docker create --name temp_container111 $DOCKERHUB_USER/$APP_NAME:$BUILD_NUMBER
+                  docker cp temp_container111:/usr/share/nginx/html/index.html /var/www/html/
+                  docker rm temp_container111
+                  
                   
                  '''
     }
