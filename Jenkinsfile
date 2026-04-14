@@ -3,7 +3,7 @@ pipeline {
     environment {
         // Replace with your actual Docker Hub username
         DOCKERHUB_USER = 'manju301'
-        APP_NAME = 'my-web-app'
+        APP_NAME = 'my-web-app1'
     }
      
     stages {
