@@ -5,17 +5,12 @@ pipeline {
         DOCKERHUB_USER = 'manju301'
         APP_NAME = 'my-web-app'
     }
-
-    stages {
-        stage('Checkout') {
-            agent { label 'linux-agent' }
-            tools {
+     tools {
                 git 'Default'
             }
-            steps {
-                checkout scm
-            }
-        }
+
+    stages {
+
         stage('Clone Code') {
             steps {
                 git credentialsId: 'git-hub', url: 'https://github.com/Manjulla14220/jenkins-docker'
